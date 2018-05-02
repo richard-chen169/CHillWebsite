@@ -1,0 +1,186 @@
+
+<!--
+This sections is for creating the table which will take in user inputs.
+-->
+<head>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+<form id=observation  method="POST" action="/calculate">
+<h2>Observation</h2>
+
+<table>
+  <tr>
+    <th>Parameter</th>
+    <th>Unit</th>
+    <th>Value</th>
+    <th>Error (Up to thousandth digit)</th>
+    <th>Limits</th>
+  </tr>
+  <tr>
+    <td>Observation Time</td>
+    <td>Years</td>
+    <td><input name="observation_time" type = "text" size="20"></td>
+    <td><input name="ot_error" type = "text" size = "20"></td>
+    <td>(0,100]</td>
+  </tr>
+   <tr>
+    <td>Sky Fraction</td>
+    <td>NA</td>
+    <td><input name="sky_fraction" type = "text" size="20"></td>
+    <td><input name="sf_error" type = "text" size="20"></td>
+    <td>(0,1]</td>
+  </tr>
+  <tr>
+    <td>Observation Efficiency</td>
+    <td>NA</td>
+    <td><input name="observation_efficiency" type = "text" size="20"></td>
+    <td><input name="oe_error" type = "text" size="20"></td>
+    <td>(0,1]</td>
+  </tr>
+  <tr>
+    <td>NET Margin</td>
+    <td>NA</td>
+    <td><input name="net_margin" type = "text" size="20"></td>
+    <td><input name="nm_error" type = "text" size="20"></td>
+    <td>(0, 100]</td>
+  </tr>
+</table>
+</body>
+<div>
+  
+      <input type="submit" value="Generate table"/>
+  </form>
+</div>
+
+
+<!--
+This sections is for creating the table which will take in user inputs.
+-->
+<head>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+<h2>Camera</h2>
+
+<table>
+  <tr>
+    <th>Parameter</th>
+    <th>Unit</th>
+    <th>Value</th>
+    <th>Error (Up to thousandth digit)</th>
+    <th>Limits</th>
+  </tr>
+  <tr>
+    <td>Optical Coupling</td>
+    <td>NA</td>
+    <td><input name="optical_coupling" type = "text" size="20"></td>
+    <td><input name="oc_error" type = "text" size = "20"></td>
+    <td>(0,1]</td>
+  </tr>
+   <tr>
+    <td>F Number</td>
+    <td>NA</td>
+    <td><input name="f_number" type = "text" size="20"></td>
+    <td><input name="fn_error" type = "text" size="20"></td>
+    <td>(0,100]</td>
+  </tr>
+  <tr>
+    <td>Bath Temp</td>
+    <td>K</td>
+    <td><input name="bath_temp" type = "text" size="20"></td>
+    <td><input name="bt_error" type = "text" size="20"></td>
+    <td>(0,1000]</td>
+  </tr>
+</table>
+</body>
+
+
+<!--
+This sections is for creating the table which will take in user inputs.
+-->
+<head>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+<h2>Camera</h2>
+
+<table>
+  <tr>
+    <th>Parameter</th>
+    <th>Unit</th>
+    <th>Value</th>
+    <th>Error (Up to thousandth digit)</th>
+    <th>Limits</th>
+  </tr>
+  <tr>
+    <td>Optical Coupling</td>
+    <td>NA</td>
+    <td><input name="optical_coupling" type = "text" size="20"></td>
+    <td><input name="oc_error" type = "text" size = "20"></td>
+    <td>(0,1]</td>
+  </tr>
+   <tr>
+    <td>F Number</td>
+    <td>NA</td>
+    <td><input name="f_number" type = "text" size="20"></td>
+    <td><input name="fn_error" type = "text" size="20"></td>
+    <td>(0,100]</td>
+  </tr>
+  <tr>
+    <td>Bath Temp</td>
+    <td>K</td>
+    <td><input name="bath_temp" type = "text" size="20"></td>
+    <td><input name="bt_error" type = "text" size="20"></td>
+    <td>(0,1000]</td>
+  </tr>
+</table>
+</body>

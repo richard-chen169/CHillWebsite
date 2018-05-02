@@ -1,0 +1,101 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+
+
+<html>
+<body>
+ 
+<table>
+    <tr><td>Text to Save:</td></tr>
+    <tr>
+        <td colspan="3">
+            <textarea id="inputTextToSave" rows=20 cols=60 style=font-family:monospace>
+#*****Galactic Foreground Parameters*****
+#
+Parameter              | Unit  | Value  
+#-----------------------------------------------
+Dust Temperature       | [K]   | 19.70 +/- 0.000
+#-----------------------------------------------
+Dust Spec Index        | NA    | 1.500 +/- 0.000
+#-----------------------------------------------
+Dust Amplitude         | NA    | 2.e-3 +/- 0.e-3
+#-----------------------------------------------
+Dust Scale Frequency   | NA    | 353.0 +/- 0.000
+#-----------------------------------------------
+Synchrotron Spec Index | [Yrs] | -3.00 +/- 0.000
+#-----------------------------------------------
+Synchrotron Amplitude  | NA    | 6.0e3 +/- 0.0e3
+#-----------------------------------------------
+            </textarea>
+        </td>
+    </tr>
+    <tr>
+        <td>Filename to Save As:</td>
+        <td><input id="inputFileNameToSaveAs"></input></td>
+        <td><button onclick="saveTextAsFile()">Save Text to File</button></td>
+    </tr>
+    <tr>
+        <td>Select a File to Load:</td>
+        <td><input type="file" id="fileToLoad"></td>
+        <td><button onclick="loadFileAsText()">Load Selected File</button><td>
+
+    </tr>
+</table>
+ 
+<script type="text/javascript">
+ 
+function saveTextAsFile()
+{
+    var textToSave = document.getElementById("inputTextToSave").value;
+    var textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"});
+    var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
+    var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
+ 
+    var downloadLink = document.createElement("a");
+    downloadLink.download = fileNameToSaveAs;
+    downloadLink.innerHTML = "Download File";
+    downloadLink.href = textToSaveAsURL;
+    downloadLink.onclick = destroyClickedElement;
+    downloadLink.style.display = "none";
+    document.body.appendChild(downloadLink);
+ 
+    downloadLink.click();
+}
+ 
+function destroyClickedElement(event)
+{
+    document.body.removeChild(event.target);
+}
+ 
+function loadFileAsText()
+{
+    var fileToLoad = document.getElementById("fileToLoad").files[0];
+ 
+    var fileReader = new FileReader();
+    fileReader.onload = function(fileLoadedEvent) 
+    {
+        var textFromFileLoaded = fileLoadedEvent.target.result;
+        document.getElementById("inputTextToSave").value = textFromFileLoaded;
+    };
+    fileReader.readAsText(fileToLoad, "UTF-8");
+}
+ 
+</script>
+ 
+</body>
+</html>
+
+ <title>Upload foregrounds file</title>
+    <h1>Upload foregrounds file</h1>
+    <form method=post enctype=multipart/form-data>
+      <p><input type=file name=file>
+         <input type=submit value=Upload>
+    </form>
+<!--
+    https://thiscouldbebetter.wordpress.com/2012/12/18/loading-editing-and-saving-a-text-file-in-html5-using-javascrip/
+    -->
+
+
+{% endblock %}

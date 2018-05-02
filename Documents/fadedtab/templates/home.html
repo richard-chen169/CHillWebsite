@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+
+<!-- This part is for user input, CAMERA -->
+<script language="Javascript" >
+function download(filename, text) {
+  var pom = document.createElement('a');
+  pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + 
+
+encodeURIComponent(text));
+  pom.setAttribute('download', filename);
+
+  pom.style.display = 'none';
+  document.body.appendChild(pom);
+
+  pom.click();
+
+  document.body.removeChild(pom);
+}
+</script>
+</head>
+
+
+
+<div class="jumbotron text-center">
+  <h1>Welcome to CHillCalc</h1>
+  <p class="lead">This website implements Charles Hill's CHillCalc for telescope parameters</p>
+  <p>For more information, please read the following documents on the strict guidelines this program requires. </p>
+
+<p>Remember, these guidelines are strict, and the program will not run properly unless they are adhered to. When done inputting all text files, press the RUN button on the navigation bar.
+A download will start with the sensitivy file.</p>
+
+{% endblock %}
